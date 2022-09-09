@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Accueil
+{% endblock %}
+
+{% block body %}
+  <section class="container">
+    <div class="row">
+      {% for produit in produits %}
+        <div class="card m-3" style="width: 18rem;">
+          <img src="{{ asset('uploads/' ~ produit.picture) }}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{ produit.title }}</h5>
+            <p class="card-text">{{ produit.description }}</p>
+            <a href="#" class="btn btn-primary">Voir l'article</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
